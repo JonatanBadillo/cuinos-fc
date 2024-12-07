@@ -27,7 +27,7 @@ export function JoinForm() {
   };
 
   return (
-    <section id="join" className="py-20 bg-black text-white">
+    <section id="unirse" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4 max-w-2xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

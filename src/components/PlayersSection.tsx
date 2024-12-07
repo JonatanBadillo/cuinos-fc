@@ -15,7 +15,7 @@ export function PlayersSection() {
   const topScorer = [...players].sort((a, b) => b.goals - a.goals)[0];
 
   return (
-    <section id="players" className="w-full py-20 bg-black">
+    <section id="jugadores" className="w-full py-20 bg-black">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-12"

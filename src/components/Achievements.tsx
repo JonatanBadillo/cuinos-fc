@@ -3,7 +3,7 @@ import { achievements } from '@/data/achievements';
 
 export function Achievements() {
   return (
-    <section id="achievements" className="py-20 bg-black text-white">
+    <section id="logros" className="py-20 bg-black text-white">
       <div className="container mx-auto px-4">
         <motion.h2 
           className="text-4xl font-bold text-center mb-12"

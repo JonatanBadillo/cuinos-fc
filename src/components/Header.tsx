@@ -29,7 +29,8 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const menuItems = ['about', 'achievements', 'players', 'gallery', 'join'];
+  const menuItems = ['nosotros', 'logros', 'jugadores', 'galería', 'unirse'];
+
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
