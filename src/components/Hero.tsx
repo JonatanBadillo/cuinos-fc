@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Trophy, Users, ArrowRight } from 'lucide-react';
+import Trophy from 'lucide-react/dist/esm/icons/trophy';
+import Users from 'lucide-react/dist/esm/icons/users';
+import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 
 export function Hero() {
   return (

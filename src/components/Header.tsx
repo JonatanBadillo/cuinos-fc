@@ -1,4 +1,6 @@
-import { CircleDot, Menu, X } from 'lucide-react';
+import CircleDot from 'lucide-react/dist/esm/icons/circle-dot';
+import Menu from 'lucide-react/dist/esm/icons/menu';
+import X from 'lucide-react/dist/esm/icons/x';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 

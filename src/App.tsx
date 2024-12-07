@@ -9,7 +9,7 @@ import { Toaster } from '@/components/ui/toaster';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen w-full bg-black overflow-x-hidden">
       <Header />
       <Hero />
       <About />

@@ -1,4 +1,7 @@
-import { Trophy, Users, Calendar, MapPin } from 'lucide-react';
+import Trophy from 'lucide-react/dist/esm/icons/trophy';
+import Users from 'lucide-react/dist/esm/icons/users';
+import Calendar from 'lucide-react/dist/esm/icons/calendar';
+import MapPin from 'lucide-react/dist/esm/icons/map-pin';
 import { motion } from 'framer-motion';
 
 export function About() {

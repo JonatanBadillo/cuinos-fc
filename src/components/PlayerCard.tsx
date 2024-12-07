@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Player } from '@/types';
-import { Trophy, Flag } from 'lucide-react';
+import Trophy from 'lucide-react/dist/esm/icons/trophy';
+import Flag from'lucide-react/dist/esm/icons/flag';
 
 interface PlayerCardProps {
   player: Player;
