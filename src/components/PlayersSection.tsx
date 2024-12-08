@@ -3,19 +3,16 @@ import { players } from '@/data/players';
 import { PlayerCard } from './PlayerCard';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Trophy from '@/components/icons/Trophy';
-
-// Definir tipo para las posiciones
-type Position = 'Todos' | 'Portero' | 'Defensa' | 'Mediocampista' | 'Delantero';
+import { Trophy } from 'lucide-react';
 
 export function PlayersSection() {
-  const [selectedPosition, setSelectedPosition] = useState<Position>('Todos');
+  const [selectedPosition, setSelectedPosition] = useState<string>('Todos');
   
   // Traducción de posiciones
-  const positions: Position[] = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
+  const positions = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
   
-  // Mapeo para filtrado con tipo definido
-  const positionMapping: Record<Position, string> = {
+  // Mapeo para filtrado
+  const positionMapping = {
     'Todos': 'All',
     'Portero': 'Goalkeeper',
     'Defensa': 'Defender',
@@ -83,25 +80,33 @@ export function PlayersSection() {
                 <Button
                   onClick={() => setSelectedPosition(position)}
                   className={`
-                    relative overflow-hidden group px-6 py-2
+                    relative overflow-hidden rounded-xl px-6 py-3 font-medium
+                    transition-all duration-300 ease-out
                     ${selectedPosition === position 
-                      ? 'bg-pink-600 hover:bg-pink-700 text-white border-pink-500' 
-                      : 'bg-white/10 hover:bg-white/20 text-gray-200 hover:text-white border-pink-500/30 hover:border-pink-500'
+                      ? 'bg-gradient-to-r from-pink-600 to-pink-500 text-white shadow-lg shadow-pink-500/30 border-none' 
+                      : `
+                        bg-gradient-to-r from-pink-950/50 to-pink-900/30
+                        text-gray-300 hover:text-white 
+                        border border-pink-500/20 hover:border-pink-500/50 
+                        backdrop-blur-sm hover:bg-gradient-to-r hover:from-pink-900/50 hover:to-pink-800/30
+                        shadow-md shadow-pink-950/20 hover:shadow-lg hover:shadow-pink-500/10
+                      `
                     }
+                    before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/0 before:via-white/20 before:to-white/0 
+                    before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700
                   `}
                 >
-                  {/* Efecto de brillo */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    initial={{ x: '-100%' }}
-                    animate={{ x: '100%' }}
-                    transition={{
-                      repeat: Infinity,
-                      duration: 2,
-                      ease: "linear",
-                    }}
-                  />
-                  <span className="relative z-10 font-medium">{position}</span>
+                  <span className="relative z-10 flex items-center gap-2">
+                    <span 
+                      className={`h-1.5 w-1.5 rounded-full transition-all duration-300
+                        ${selectedPosition === position 
+                          ? 'bg-white scale-100' 
+                          : 'bg-pink-400/50 scale-0 group-hover:scale-100'
+                        }
+                      `}
+                    />
+                    {position}
+                  </span>
                 </Button>
               </motion.div>
             ))}
