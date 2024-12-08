@@ -1,22 +1,24 @@
 import img1 from "@/assets/img/achievements/img1.jpg";
+import img2 from "@/assets/img/achievements/img2.jpg";
+import img3 from "@/assets/img/achievements/img3.jpg";
 
 export const achievements = [
   {
     title: "Campeones de Liga Center Fut 7 CCU",
     year: "2024",
-    description: "En una final épica, llena de tensión y adrenalina, nos coronamos campeones con una definición de penales que quedará grabada en la historia.",
+    description: "Una final que nos mantuvo al borde del abismo, pero con una fe inquebrantable, nos coronamos campeones en una definición de penales dramática, un momento épico que nunca olvidaremos.",
     image: img1
   },
   {
-    title: "Cup Winners",
-    year: "2022",
-    description: "Secured our first major trophy with a dramatic penalty shootout victory",
-    image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800"
+    title: "3er Lugar de Liga Center Fut 7 CCU",
+    year: "2024",
+    description: "Tras caer ante el sueño del bicampeonato, el equipo no se rindió. Con coraje y corazón, se levantó para conquistar el 3er lugar, dominando el partido con un impresionante 3-0.",
+    image: img2
   },
   {
-    title: "Community Award",
-    year: "2021",
-    description: "Recognized for outstanding contribution to local youth development",
-    image: "https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?w=800"
+    title: "Liderato en Liga Center Fut 7 CCU",
+    year: "2024",
+    description: "Con una temporada impresionante, logramos el liderato general tras 20 jornadas de puro dominio. Solo perdimos 1 vez y empatamos 2, alcanzando una efectividad del 90%. ¡Un verdadero espectáculo de consistencia!",
+    image: img3
   }
 ];
