@@ -54,7 +54,7 @@ export function Header() {
     <motion.header 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="fixed w-full top-0 z-50 bg-gradient-to-b from-black/90 to-black/70 backdrop-blur-md text-white py-4 border-b border-white/10"
+      className="fixed w-full top-0 z-50 bg-gradient-to-b from-black/95 to-black/90 backdrop-blur-xl text-white py-4 border-b border-pink-500/20"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -62,24 +62,30 @@ export function Header() {
             className="flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="relative">
+            <div className="relative bg-black/40 rounded-full p-1">
               <img src={logo} alt="Cuinos FC" className="h-12 w-12" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Cuinos FC</h1>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Cuinos FC
+              </h1>
               <p className="text-xs text-pink-400">Fundado en 2022</p>
             </div>
           </motion.div>
 
-          {/* Mobile Menu Button */}
-          <button 
-            className="lg:hidden"
+          <motion.button 
+            className="lg:hidden p-2 bg-pink-500/10 hover:bg-pink-500/20 rounded-full border border-pink-500/20 backdrop-blur-sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {isMenuOpen ? (
+              <X size={24} className="text-pink-400" />
+            ) : (
+              <Menu size={24} className="text-pink-400" />
+            )}
+          </motion.button>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:block">
             <motion.ul 
               className="flex space-x-8"
@@ -122,7 +128,6 @@ export function Header() {
           </nav>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.nav
@@ -137,7 +142,7 @@ export function Header() {
                 height: 0,
                 transition: { duration: 0.2, ease: "easeIn" }
               }}
-              className="lg:hidden mt-4 bg-black/90 backdrop-blur-md rounded-lg border border-white/10"
+              className="lg:hidden mt-4 bg-black/95 backdrop-blur-xl rounded-lg border border-pink-500/20 shadow-lg shadow-pink-500/5"
             >
               <ul className="flex flex-col p-4 space-y-4">
                 {menuItems.map((item) => (
@@ -148,11 +153,14 @@ export function Header() {
                   >
                     <a 
                       href={`#${item}`}
-                      className={`block py-2 text-center transition-colors capitalize relative
-                        ${activeSection === item ? 'text-pink-400' : 'text-white hover:text-pink-400'}`}
+                      className={`block py-2 px-4 text-center transition-colors capitalize relative rounded-lg
+                        ${activeSection === item 
+                          ? 'text-pink-400 bg-pink-500/10' 
+                          : 'text-gray-200 hover:text-pink-400 hover:bg-pink-500/5'
+                        }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {item}
+                      <span className="relative z-10">{item}</span>
                       {activeSection === item && (
                         <motion.span
                           layoutId="mobileActiveIndicator"

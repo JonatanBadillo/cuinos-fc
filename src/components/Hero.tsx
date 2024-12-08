@@ -3,8 +3,7 @@ import Trophy from 'lucide-react/dist/esm/icons/trophy';
 import Users from 'lucide-react/dist/esm/icons/users';
 import ArrowRight from 'lucide-react/dist/esm/icons/arrow-right';
 import Star from 'lucide-react/dist/esm/icons/star';
-import Award from 'lucide-react/dist/esm/icons/award';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export function Hero() {
   // Generador de partículas mejorado

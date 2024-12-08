@@ -47,7 +47,7 @@ export function PlayersSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
-          {filteredPlayers.map((player, index) => (
+          {filteredPlayers.map((player) => (
             <PlayerCard 
               key={player.id} 
               player={player} 
