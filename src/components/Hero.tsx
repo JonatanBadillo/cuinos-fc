@@ -118,7 +118,7 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a
-                href="#about"
+                href="#nosotros"
                 className="group flex items-center gap-2 border-2 border-pink-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
