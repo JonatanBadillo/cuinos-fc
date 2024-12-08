@@ -1,9 +1,11 @@
+import img1 from "@/assets/img/achievements/img1.jpg";
+
 export const achievements = [
   {
-    title: "Regional Champions",
-    year: "2023",
-    description: "Dominated the regional league with an impressive 15-game winning streak",
-    image: "https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800"
+    title: "Campeones de Liga Center Fut 7 CCU",
+    year: "2024",
+    description: "En una final épica, llena de tensión y adrenalina, nos coronamos campeones con una definición de penales que quedará grabada en la historia.",
+    image: img1
   },
   {
     title: "Cup Winners",
