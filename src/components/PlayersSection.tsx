@@ -5,14 +5,17 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Trophy from '@/components/icons/Trophy';
 
+// Definir tipo para las posiciones
+type Position = 'Todos' | 'Portero' | 'Defensa' | 'Mediocampista' | 'Delantero';
+
 export function PlayersSection() {
-  const [selectedPosition, setSelectedPosition] = useState<string>('Todos');
+  const [selectedPosition, setSelectedPosition] = useState<Position>('Todos');
   
   // Traducción de posiciones
-  const positions = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
+  const positions: Position[] = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
   
-  // Mapeo para filtrado
-  const positionMapping = {
+  // Mapeo para filtrado con tipo definido
+  const positionMapping: Record<Position, string> = {
     'Todos': 'All',
     'Portero': 'Goalkeeper',
     'Defensa': 'Defender',
