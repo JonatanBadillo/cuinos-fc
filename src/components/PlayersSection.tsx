@@ -3,16 +3,24 @@ import { players } from '@/data/players';
 import { PlayerCard } from './PlayerCard';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Trophy } from 'lucide-react';
+import Trophy from '@/components/icons/Trophy';
+
+// Definir el tipo para las posiciones
+type Position = 'Todos' | 'Portero' | 'Defensa' | 'Mediocampista' | 'Delantero';
+
+// Definir el tipo para el mapeo de posiciones
+type PositionMapping = {
+  [K in Position]: string;
+};
 
 export function PlayersSection() {
-  const [selectedPosition, setSelectedPosition] = useState<string>('Todos');
+  const [selectedPosition, setSelectedPosition] = useState<Position>('Todos');
   
   // Traducción de posiciones
-  const positions = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
+  const positions: Position[] = ['Todos', 'Portero', 'Defensa', 'Mediocampista', 'Delantero'];
   
-  // Mapeo para filtrado
-  const positionMapping = {
+  // Mapeo para filtrado con tipo definido
+  const positionMapping: PositionMapping = {
     'Todos': 'All',
     'Portero': 'Goalkeeper',
     'Defensa': 'Defender',

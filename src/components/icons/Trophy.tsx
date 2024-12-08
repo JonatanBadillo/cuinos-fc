@@ -1,6 +1,5 @@
-const Trophy = ({ size = 24, className = "" }) => (
+const Trophy = ({ size = 16, className = "" }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     width={size}
     height={size}
     viewBox="0 0 24 24"
