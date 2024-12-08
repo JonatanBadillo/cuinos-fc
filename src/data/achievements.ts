@@ -6,19 +6,19 @@ export const achievements = [
   {
     title: "Campeones de Liga Center Fut 7 CCU",
     year: "2024",
-    description: "Una final que nos mantuvo al borde del abismo, pero con una fe inquebrantable, nos coronamos campeones en una definición de penales dramática, un momento épico que nunca olvidaremos.",
+    description: "Con fe inquebrantable, nos coronamos campeones en una definición de penales que jamás olvidaremos.",
     image: img1
   },
   {
     title: "3er Lugar de Liga Center Fut 7 CCU",
     year: "2024",
-    description: "Tras caer ante el sueño del bicampeonato, el equipo no se rindió. Con coraje y corazón, se levantó para conquistar el 3er lugar, dominando el partido con un impresionante 3-0.",
+    description: "Aunque soñamos con el bicampeonato, el equipo reaccionó con corazón y se llevó el 3er lugar, ganando 3-0.",
     image: img2
   },
   {
     title: "Liderato en Liga Center Fut 7 CCU",
     year: "2024",
-    description: "Con una temporada impresionante, logramos el liderato general tras 20 jornadas de puro dominio. Solo perdimos 1 vez y empatamos 2, alcanzando una efectividad del 90%. ¡Un verdadero espectáculo de consistencia!",
+    description: "Con una temporada impecable, lideramos la tabla tras 20 jornadas, perdiendo solo 1 vez y empatando 2. ¡Un 90% de efectividad!",
     image: img3
   }
 ];
