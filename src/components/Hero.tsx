@@ -149,7 +149,7 @@ export function Hero() {
               { 
                 icon: Users, 
                 label: 'Jugadores', 
-                value: '25+',
+                value: '15+',
                 description: 'Miembros Activos',
               },
             ].map((stat, index) => (
