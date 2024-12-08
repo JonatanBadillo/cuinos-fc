@@ -80,11 +80,11 @@ export function Hero() {
             >
               Bienvenido a{' '}
               <span className="relative inline-block">
-                <span className="bg-gradient-to-r from-pink-500 via-pink-400 to-pink-500 bg-clip-text text-transparent animate-gradient">
+                <span className="bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 bg-clip-text text-transparent animate-gradient">
                   Cuinos FC
                 </span>
                 <motion.span
-                  className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-pink-500 via-pink-400 to-pink-500 rounded-full"
+                  className="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 rounded-full"
                   initial={{ width: 0 }}
                   animate={{ width: '100%' }}
                   transition={{ delay: 0.5 }}
@@ -94,7 +94,7 @@ export function Hero() {
 
             {/* Descripción */}
             <motion.p 
-              className="text-xl text-gray-300 mb-8 leading-relaxed"
+              className="text-xl text-gray-400 mb-8 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
@@ -102,15 +102,14 @@ export function Hero() {
               Donde la pasión y la determinación se fusionan. Vive la experiencia de un equipo comprometido y dedicado.
             </motion.p>
 
-            {/* Botones actualizados sin efectos morados */}
+            {/* Botones actualizados con tonos más oscuros */}
             <div className="flex flex-wrap gap-4">
               <motion.a
                 href="#join"
-                className="group flex items-center gap-2 bg-pink-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
+                className="group flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
-                  backgroundColor: '#ec4899',
-                  color: 'white'
+                  color: '#fff',
                 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -119,11 +118,10 @@ export function Hero() {
               </motion.a>
               <motion.a
                 href="#nosotros"
-                className="group flex items-center gap-2 border-2 border-pink-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
+                className="group flex items-center gap-2 border-2 border-pink-600 hover:bg-pink-600/10 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
-                  backgroundColor: 'rgba(236, 72, 153, 0.1)',
-                  color: 'white'
+                  color: '#fff',
                 }}
                 whileTap={{ scale: 0.95 }}
               >
