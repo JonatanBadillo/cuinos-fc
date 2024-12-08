@@ -132,7 +132,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Stats cards rediseñadas */}
+          {/* Stats cards actualizadas para coincidir con About.tsx */}
           <motion.div
             className="hidden lg:grid grid-cols-2 gap-8"
             initial={{ opacity: 0, y: 50 }}
@@ -155,41 +155,40 @@ export function Hero() {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="group relative bg-black/40 backdrop-blur-xl p-8 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300"
+                className="group relative bg-gradient-to-br from-pink-500/5 via-black/40 to-black/40 backdrop-blur-xl p-8 rounded-2xl border border-pink-500/20"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
                 whileHover={{ 
                   scale: 1.02,
                   transition: { type: "spring", stiffness: 300 }
                 }}
               >
-                {/* Fondo decorativo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/10 via-pink-500/5 to-transparent rounded-2xl" />
-                
                 {/* Círculo decorativo */}
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-pink-500/10 rounded-full blur-xl" />
+                <div className="absolute -top-4 -right-4 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
-                  {/* Icono con contenedor */}
-                  <div className="bg-pink-500/10 p-3 rounded-xl inline-block mb-4">
+                  {/* Icono mejorado */}
+                  <div className="bg-gradient-to-br from-pink-500/20 to-pink-500/5 p-4 rounded-xl inline-block mb-6 group-hover:scale-110 transition-transform duration-300">
                     <stat.icon className="w-8 h-8 text-pink-400" />
                   </div>
                   
-                  {/* Contenido */}
-                  <div className="space-y-2">
-                    <div className="flex items-end gap-2">
-                      <h3 className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">
-                        {stat.value}
-                      </h3>
-                      <span className="text-pink-400 font-semibold mb-1">
-                        {stat.label}
-                      </span>
-                    </div>
-                    <p className="text-gray-400 text-sm">
+                  {/* Contenido mejorado */}
+                  <div className="space-y-3">
+                    <h3 className="text-4xl font-bold bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">
+                      {stat.value}
+                    </h3>
+                    <p className="text-lg font-semibold text-pink-400">
+                      {stat.label}
+                    </p>
+                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
                       {stat.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Brillo en hover */}
+                {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-pink-500/10 to-pink-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
               </motion.div>
             ))}
