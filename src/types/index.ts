@@ -5,7 +5,7 @@ export interface Player {
   goals: number;
   image: string;
   number: number;
-  nationality: string;
+  nationality?: string;
 }
 
 export interface TeamStats {
