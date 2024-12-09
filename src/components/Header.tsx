@@ -102,9 +102,9 @@ export function Header() {
               }}
             />
             {isMenuOpen ? (
-              <X size={24} className="text-pink-400 relative z-10" />
+              <X className="w-6 h-6 text-pink-400 relative z-10" />
             ) : (
-              <Menu size={24} className="text-pink-400 relative z-10" />
+              <Menu className="w-6 h-6 text-pink-400 relative z-10" />
             )}
           </motion.button>
 

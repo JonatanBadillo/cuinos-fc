@@ -96,12 +96,12 @@ export function Gallery() {
               
               {/* Descripción de la imagen */}
               <motion.div 
-                className="absolute bottom-0 left-0 right-0 p-8"
+                className="absolute bottom-0 left-0 right-0 p-6 sm:p-4 md:p-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="text-white text-xl font-medium max-w-3xl mx-auto text-center">
+                <p className="text-white text-sm sm:text-base md:text-lg font-medium max-w-3xl mx-auto text-center">
                   {galleryImages[currentIndex].caption}
                 </p>
               </motion.div>
@@ -122,20 +122,33 @@ export function Gallery() {
             <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
           </button>
 
-          {/* Indicadores actualizados */}
-          <div className="flex justify-center mt-8 gap-3">
+          {/* Indicadores actualizados - ocultos en móvil */}
+          <div className="hidden sm:flex justify-center mt-8 gap-2 flex-wrap px-4 w-full max-w-6xl mx-auto">
             {galleryImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-3 rounded-full transition-all duration-500 ${
+                className={`h-2 rounded-full transition-all duration-500 ${
                   index === currentIndex 
-                    ? 'bg-gradient-to-r from-pink-500 to-pink-600 w-8' 
-                    : 'bg-gray-500/50 w-3 hover:bg-pink-500/50'
+                    ? 'bg-gradient-to-r from-pink-500 to-pink-600 w-6' 
+                    : 'bg-gray-500/50 w-2 hover:bg-pink-500/50'
                 }`}
                 aria-label={`Ir a imagen ${index + 1}`}
               />
             ))}
+          </div>
+
+          {/* Indicador móvil */}
+          <div className="sm:hidden flex justify-center mt-6">
+            <motion.div 
+              className="bg-pink-500/10 backdrop-blur-sm border border-pink-500/20 rounded-full px-4 py-2 text-white/90"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <span className="text-pink-400 font-semibold">{currentIndex + 1}</span>
+              <span className="mx-2">/</span>
+              <span className="text-white/70">{galleryImages.length}</span>
+            </motion.div>
           </div>
         </div>
       </div>
