@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 import { Player } from '@/types';
 import Trophy from '@/components/icons/Trophy';
+import Shield from '@/components/icons/Shield';
+import Swords from '@/components/icons/Swords';
+import Footprints from '@/components/icons/Footprints';
+import Target from '@/components/icons/Target';
+import Goal from '@/components/icons/Goal';
 
 interface PlayerCardProps {
   player: Player;
@@ -8,6 +13,22 @@ interface PlayerCardProps {
 }
 
 export function PlayerCard({ player, isTopScorer }: PlayerCardProps) {
+  // Función para obtener el icono según la posición
+  const getPositionIcon = (position: string) => {
+    switch (position) {
+      case 'Goalkeeper':
+        return <Shield className="w-4 h-4 text-pink-400" />;
+      case 'Defender':
+        return <Swords className="w-4 h-4 text-pink-400" />;
+      case 'Midfielder':
+        return <Footprints className="w-4 h-4 text-pink-400" />;
+      case 'Forward':
+        return <Target className="w-4 h-4 text-pink-400" />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <motion.div 
       layout
@@ -42,7 +63,7 @@ export function PlayerCard({ player, isTopScorer }: PlayerCardProps) {
             animate={{ scale: 1 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
-            <Trophy className="h-6 w-6 text-yellow-900" />
+            <Trophy className="w-6 h-6 text-yellow-900" />
           </motion.div>
         )}
 
@@ -57,15 +78,19 @@ export function PlayerCard({ player, isTopScorer }: PlayerCardProps) {
             <h3 className="text-2xl font-bold text-white mb-2">{player.name}</h3>
             
             <div className="flex justify-between items-center">
-              <span className="bg-pink-500/20 px-3 py-1 rounded-full text-pink-400 text-sm font-medium">
-                {player.position === 'Goalkeeper' ? 'Portero' :
-                 player.position === 'Defender' ? 'Defensa' :
-                 player.position === 'Midfielder' ? 'Mediocampista' :
-                 'Delantero'}
+              <span className="bg-pink-500/20 px-3 py-1 rounded-full text-pink-400 text-sm font-medium flex items-center gap-2">
+                {getPositionIcon(player.position)}
+                <span>
+                  {player.position === 'Goalkeeper' ? 'Portero' :
+                   player.position === 'Defender' ? 'Defensa' :
+                   player.position === 'Midfielder' ? 'Mediocampista' :
+                   'Delantero'}
+                </span>
               </span>
               {player.goals > 0 && (
-                <span className="text-white font-semibold">
-                  {player.goals} {player.goals === 1 ? 'Gol' : 'Goles'}
+                <span className="text-white font-semibold flex items-center gap-2">
+                  <Goal className="w-4 h-4 text-pink-400" />
+                  <span>{player.goals} {player.goals === 1 ? 'Gol' : 'Goles'}</span>
                 </span>
               )}
             </div>
