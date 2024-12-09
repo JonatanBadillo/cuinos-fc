@@ -66,7 +66,7 @@ export function Footer() {
                   whileHover={{ x: 5 }}
                   className="text-white transition-colors"
                 >
-                  <a href={`#${item.toLowerCase()}`}>{item}</a>
+                  <a href={`#${item.toLowerCase()}`} className="text-white" >{item}</a>
                 </motion.li>
               ))}
             </ul>
