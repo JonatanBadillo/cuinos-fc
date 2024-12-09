@@ -11,6 +11,11 @@ import player10 from '@/assets/img/players/player10.jpg';
 import player11 from '@/assets/img/players/player11.jpg';
 import player12 from '@/assets/img/players/player12.jpg';
 import player13 from '@/assets/img/players/player13.jpg';
+import player14 from '@/assets/img/players/player14.jpg';
+import player15 from '@/assets/img/players/player15.jpg';
+import player16 from '@/assets/img/players/player16.jpg';
+import player17 from '@/assets/img/players/player17.jpg';
+import player18 from '@/assets/img/players/player18.jpg';
 
 export const players = [
   {
@@ -119,6 +124,45 @@ export const players = [
     goals: 45,
     image: player13,
     number: 20,
-  }
-  
+  },
+  {
+    id: 14,
+    name: "Enrique",
+    position: "Midfielder",
+    goals: 46,
+    image: player14,
+    number: 47,
+  },
+  {
+    id: 15,
+    name: "Adrian Balle",
+    position: "Midfielder",
+    goals: 21,
+    image: player15,
+    number: 13,
+  },
+  {
+    id: 16,
+    name: "Angel Garcia",
+    position: "Forward",
+    goals: 26,
+    image: player16,
+    number: 80,
+  },
+  {
+    id: 17,
+    name: "Santiago Cordova",
+    position: "Forward",
+    goals: 74,
+    image: player17,
+    number: 7,
+  },
+  {
+    id: 18,
+    name: "Jesus Reyes",
+    position: "Forward",
+    goals: 30,
+    image: player18,
+    number: 9,
+  },
 ];
