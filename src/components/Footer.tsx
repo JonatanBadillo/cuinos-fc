@@ -8,13 +8,13 @@ export function Footer() {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://instagram.com/cuinosfc',
+      url: 'https://www.instagram.com/cuinos.fc/',
       hoverColor: 'hover:text-pink-500'
     },
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://facebook.com/cuinosfc',
+      url: 'https://www.facebook.com/profile.php?id=61556508205444',
       hoverColor: 'hover:text-pink-500'
     }
   ];
@@ -49,7 +49,7 @@ export function Footer() {
             >
               <img src={Logo} alt="Cuinos FC" className="w-32 h-auto" />
             </motion.div>
-            <p className="text-gray-400">
+            <p className="text-white">
               Más que un equipo, somos una familia unida por la pasión del fútbol.
             </p>
           </div>
@@ -64,15 +64,13 @@ export function Footer() {
                 <motion.li 
                   key={item}
                   whileHover={{ x: 5 }}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white transition-colors"
                 >
                   <a href={`#${item.toLowerCase()}`}>{item}</a>
                 </motion.li>
               ))}
             </ul>
           </div>
-
-
 
           {/* Redes Sociales */}
           <div className="space-y-6">
@@ -86,7 +84,7 @@ export function Footer() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`bg-pink-500/10 p-3 rounded-xl ${social.hoverColor} transition-all duration-300`}
+                  className={`bg-pink-500/10 p-3 rounded-xl text-white hover:text-pink-400 transition-all duration-300`}
                   whileHover={{ 
                     scale: 1.1,
                     backgroundColor: 'rgba(236, 72, 153, 0.2)'
