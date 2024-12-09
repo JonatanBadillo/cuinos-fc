@@ -63,9 +63,11 @@ export function PlayerCard({ player, isTopScorer }: PlayerCardProps) {
                  player.position === 'Midfielder' ? 'Mediocampista' :
                  'Delantero'}
               </span>
-              <span className="text-white font-semibold">
-                {player.goals} {player.goals === 1 ? 'Gol' : 'Goles'}
-              </span>
+              {player.goals > 0 && (
+                <span className="text-white font-semibold">
+                  {player.goals} {player.goals === 1 ? 'Gol' : 'Goles'}
+                </span>
+              )}
             </div>
           </div>
         </div>
