@@ -8,9 +8,9 @@ export function About() {
   const stats = [
     {
       icon: Trophy,
-      label: 'Campeonatos',
+      label: 'Campeonato',
       value: '1',
-      description: 'Títulos de Liga Ganado',
+      description: 'Título de Liga Ganado',
     },
     {
       icon: Users,
