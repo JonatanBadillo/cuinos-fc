@@ -7,6 +7,9 @@ import player6 from '@/assets/img/players/player6.jpg';
 import player7 from '@/assets/img/players/player7.jpg';
 import player8 from '@/assets/img/players/player8.jpg';
 import player9 from '@/assets/img/players/player9.jpg';
+import player10 from '@/assets/img/players/player10.jpg';
+import player11 from '@/assets/img/players/player11.jpg';
+import player12 from '@/assets/img/players/player12.jpg';
 
 export const players = [
   {
@@ -84,5 +87,29 @@ export const players = [
     goals: 0,
     image: player9,
     number: 99,
-  }
+  },{
+    id: 10,
+    name: "Gustavo Ramirez",
+    position: "Midfielder",
+    goals: 58,
+    image: player10,
+    number: 21,
+  },
+  {
+    id: 11,
+    name: "Santiago Robles",
+    position: "Midfielder",
+    goals: 20,
+    image: player11,
+    number: 10,
+  },
+  {
+    id: 12,
+    name: "Josue Jimenez",
+    position: "Midfielder",
+    goals: 18,
+    image: player12,
+    number: 17,
+  },
+  
 ];
