@@ -10,6 +10,7 @@ import player9 from '@/assets/img/players/player9.jpg';
 import player10 from '@/assets/img/players/player10.jpg';
 import player11 from '@/assets/img/players/player11.jpg';
 import player12 from '@/assets/img/players/player12.jpg';
+import player13 from '@/assets/img/players/player13.jpg';
 
 export const players = [
   {
@@ -111,5 +112,13 @@ export const players = [
     image: player12,
     number: 17,
   },
+  {
+    id: 13,
+    name: "Jesus Posadas",
+    position: "Midfielder",
+    goals: 45,
+    image: player13,
+    number: 20,
+  }
   
 ];
