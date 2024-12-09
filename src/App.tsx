@@ -6,6 +6,7 @@ import { PlayersSection } from './components/PlayersSection';
 import { Gallery } from './components/Gallery';
 import { JoinForm } from './components/JoinForm';
 import { Toaster } from '@/components/ui/toaster';
+import { Footer } from '@/components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Gallery />
       <JoinForm />
       <Toaster />
+      <Footer />
     </div>
   );
 }
