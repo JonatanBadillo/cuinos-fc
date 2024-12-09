@@ -9,19 +9,19 @@ export function About() {
     {
       icon: Trophy,
       label: 'Campeonatos',
-      value: '3',
-      description: 'Títulos ganados en competencias regionales',
+      value: '1',
+      description: 'Títulos de Liga Ganado',
     },
     {
       icon: Users,
       label: 'Miembros',
-      value: '25+',
+      value: '15+',
       description: 'Jugadores activos en el equipo',
     },
     {
       icon: Calendar,
       label: 'Años Activos',
-      value: '5',
+      value: '2',
       description: 'De crecimiento y desarrollo constante',
     },
     {
