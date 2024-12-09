@@ -13,18 +13,19 @@ export function Achievements() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.4,
       },
     },
   };
@@ -127,9 +128,18 @@ export function Achievements() {
               key={index}
               className="group relative h-full overflow-hidden rounded-3xl bg-gradient-to-br from-pink-600/10 via-black/60 to-black/60 border border-pink-600/20 backdrop-blur-xl"
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.02,
-                transition: { type: "spring", stiffness: 300 }
+              initial="hidden"
+              whileInView={{ 
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.4,
+                  delay: index * 0.1
+                }
+              }}
+              viewport={{ 
+                once: true,
+                margin: "-50px"
               }}
             >
               {/* Efectos de luz mejorados */}
