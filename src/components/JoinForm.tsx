@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 import Send from '@/components/icons/Send';
 import User from '@/components/icons/User';
 import Mail from '@/components/icons/Mail';
@@ -13,6 +14,8 @@ import MessageSquare from '@/components/icons/MessageSquare';
 
 export function JoinForm() {
   const { toast } = useToast();
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,13 +25,46 @@ export function JoinForm() {
 
   const positions = ['Portero', 'Defensa', 'Mediocampista', 'Delantero'];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "¡Solicitud Enviada!",
-      description: "Pronto nos pondremos en contacto contigo sobre tu incorporación a Cuinos FC.",
-    });
-    setFormData({ name: '', email: '', position: '', message: '' });
+    
+    if (!form.current) return;
+
+    try {
+      setIsSubmitting(true);
+
+      // Reemplaza estos valores con tus credenciales de EmailJS
+      const result = await emailjs.sendForm(
+        'cuinos',
+        'template_inppchk',
+        form.current,
+        '0UTUZYCTAHR3Jwddc'
+      );
+
+      if (result.text === 'OK') {
+        toast({
+          title: "¡Solicitud Enviada!",
+          description: "Pronto nos pondremos en contacto contigo sobre tu incorporación a Cuinos FC.",
+        });
+        
+        // Limpiar el formulario
+        setFormData({
+          name: '',
+          email: '',
+          position: '',
+          message: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error al enviar el formulario:', error);
+      toast({
+        title: "Error al enviar",
+        description: "Hubo un problema al enviar tu solicitud. Por favor, intenta nuevamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -97,6 +133,7 @@ export function JoinForm() {
         </motion.div>
 
         <motion.form 
+          ref={form}
           onSubmit={handleSubmit}
           className="relative"
           initial={{ opacity: 0 }}
@@ -116,6 +153,7 @@ export function JoinForm() {
                   <span>Nombre</span>
                 </label>
                 <Input
+                  name="user_name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="bg-black/50 border-pink-500/30 focus:border-pink-500 h-12 px-4 rounded-xl transition-all duration-300 focus:ring-2 focus:ring-pink-500/20"
@@ -132,6 +170,7 @@ export function JoinForm() {
                   <span>Correo Electrónico</span>
                 </label>
                 <Input
+                  name="user_email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -167,6 +206,11 @@ export function JoinForm() {
                     ))}
                   </SelectContent>
                 </Select>
+                <input 
+                  type="hidden" 
+                  name="user_position"
+                  value={formData.position} 
+                />
               </motion.div>
 
               <motion.div
@@ -178,6 +222,7 @@ export function JoinForm() {
                   <span>Mensaje</span>
                 </label>
                 <Textarea
+                  name="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="bg-black/50 border-pink-500/30 focus:border-pink-500 min-h-[120px] rounded-xl transition-all duration-300 focus:ring-2 focus:ring-pink-500/20"
@@ -193,10 +238,11 @@ export function JoinForm() {
               >
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 hover:from-pink-500 hover:via-pink-600 hover:to-pink-500 text-white font-semibold h-14 rounded-xl transition-all duration-300 shadow-lg shadow-pink-500/20 hover:shadow-pink-500/30 group"
+                  className="w-full bg-gradient-to-r from-pink-600 via-pink-500 to-pink-600 hover:from-pink-500 hover:via-pink-600 hover:to-pink-500 text-white font-semibold h-14 rounded-xl transition-all duration-300 shadow-lg shadow-pink-500/20 hover:shadow-pink-500/30 group disabled:opacity-70"
+                  disabled={isSubmitting}
                 >
                   <span className="flex items-center gap-2">
-                    Enviar Solicitud
+                    {isSubmitting ? 'Enviando...' : 'Enviar Solicitud'}
                     <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </Button>

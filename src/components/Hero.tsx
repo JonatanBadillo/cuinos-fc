@@ -104,7 +104,7 @@ export function Hero() {
             {/* Botones actualizados con tonos más oscuros */}
             <div className="flex flex-wrap gap-4">
               <motion.a
-                href="#join"
+                href="#unirse"
                 className="group flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300"
                 whileHover={{ 
                   scale: 1.05,
