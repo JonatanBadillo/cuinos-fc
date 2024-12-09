@@ -1,56 +1,88 @@
+import player1 from '@/assets/img/players/player1.jpg';
+import player2 from '@/assets/img/players/player2.jpg';
+import player3 from '@/assets/img/players/player3.jpg';
+import player4 from '@/assets/img/players/player4.jpg';
+import player5 from '@/assets/img/players/player5.jpg';
+import player6 from '@/assets/img/players/player6.jpg';
+import player7 from '@/assets/img/players/player7.jpg';
+import player8 from '@/assets/img/players/player8.jpg';
+import player9 from '@/assets/img/players/player9.jpg';
+
 export const players = [
   {
     id: 1,
-    name: "Alex Rodriguez",
-    position: "Forward",
-    goals: 15,
-    image: "https://images.unsplash.com/photo-1628891890467-b79de80b8f17?w=800",
-    number: 9,
-    nationality: "Spain"
+    name: "Ezequiel Marquez",
+    position: "Goalkeeper",
+    goals: 0,
+    image: player1,
+    number: 1,
+    nationality: "Mexico"
   },
   {
     id: 2,
-    name: "Carlos Silva",
-    position: "Midfielder",
-    goals: 8,
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800",
-    number: 8,
+    name: "Sebastian Castañeda",
+    position: "Goalkeeper",
+    goals: 0,
+    image: player2,
+    number: 13,
     nationality: "Brazil"
   },
   {
     id: 3,
-    name: "David Chen",
+    name: "Jonatan Badillo",
     position: "Defender",
-    goals: 2,
-    image: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=800",
-    number: 4,
+    goals: 10,
+    image: player3,
+    number: 19,
     nationality: "China"
   },
   {
     id: 4,
-    name: "Marcus Weber",
-    position: "Goalkeeper",
+    name: "Yael Xicotencatl",
+    position: "Defender",
     goals: 0,
-    image: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=800",
-    number: 1,
+    image: player4,
+    number: 2,
     nationality: "Germany"
   },
   {
     id: 5,
-    name: "James Wilson",
-    position: "Forward",
-    goals: 12,
-    image: "https://images.unsplash.com/photo-1618077360395-f3068be8e001?w=800",
-    number: 11,
-    nationality: "England"
+    name: "Charly Rodriguez",
+    position: "Defender",
+    goals: 5,
+    image: player5,
+    number: 4,
   },
   {
     id: 6,
-    name: "Lucas Santos",
-    position: "Midfielder",
-    goals: 6,
-    image: "https://images.unsplash.com/photo-1639747280804-dd2d6b3d88ac?w=800",
-    number: 10,
-    nationality: "Brazil"
+    name: "Vidal Zap",
+    position: "Defender",
+    goals: 3,
+    image: player6,
+    number: 5,
+  },
+  {
+    id: 7,
+    name: "Diego Cordova",
+    position: "Defender",
+    goals: 3,
+    image: player7,
+    number: 30,
+  },
+  {
+    id: 8,
+    name: "Olaf Baez",
+    position: "Defender",
+    goals: 1,
+    image: player8,
+    number: 8,
+  },
+  {
+    id: 9,
+    name: "Jorge Quesada",
+    position: "Defender",
+    goals: 0,
+    image: player9,
+    number: 99,
   }
 ];
