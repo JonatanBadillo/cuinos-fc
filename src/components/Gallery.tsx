@@ -111,15 +111,15 @@ export function Gallery() {
           {/* Botones de navegación actualizados */}
           <button 
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-pink-500/50 text-white p-4 rounded-full transition-all duration-300 backdrop-blur-sm group"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-pink-500/50 text-white p-2 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm group"
           >
-            <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
           </button>
           <button 
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-pink-500/50 text-white p-4 rounded-full transition-all duration-300 backdrop-blur-sm group"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-pink-500/50 text-white p-2 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm group"
           >
-            <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 group-hover:scale-110 transition-transform" />
           </button>
 
           {/* Indicadores actualizados - ocultos en móvil */}
